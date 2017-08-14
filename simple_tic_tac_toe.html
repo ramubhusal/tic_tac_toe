@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TIC TAC TOE</title>
+	<style type="text/css">
+		body{
+			background-color: #199999;
+		}
+		#header{
+			margin:auto;
+			text-align: left;
+			font-size:28px;
+			color:white;
+		}
+		#board{
+			text-align: center;
+			float:left;
+			padding:50px;
+			width: 40%;
+		}
+		button{
+			width: 59px;
+			height: 59px;
+			margin: auto;
+			text-align: center;
+			background-color: gray;
+			margin-top:10px;
+			color:white;
+			font-size:18px;
+			margin-bottom: 10px;
+			transition-duration:1s;
+		}
+		button:focus{
+			background-color:darkgray;
+			color:white;
+			transition-duration: 1s;
+		}
+		button:disabled{
+			color:black;
+			background-color:white;
+			font-size:26px;
+		}
+	</style>
+</head>
+<body onmousemove="result()">
+	<!-- show turn -->
+	<div id="header">
+		Turn of : 
+	</div>
+	<div id="play_again">
+		<button onclick="window.location.reload();" style="width: 300px; background-color: white; color: green;">Play Again</button>
+	</div>
+	<!-- show game -->
+	<div id="board" onmousemove="player_turn()">
+		<button onclick="name_button1()" id="one">1</button>
+		<button onclick="name_button2()" id="two">2</button>
+		<button onclick="name_button3()" id="three">3</button><br/>
+		<button onclick="name_button4()" id="four">4</button>
+		<button onclick="name_button5()" id="five">5</button>
+		<button onclick="name_button6()" id="six">6</button><br/>
+		<button onclick="name_button7()" id="seven">7</button>
+		<button onclick="name_button8()" id="eight">8</button>
+		<button onclick="name_button9()" id="nine">9</button>
+	</div>
+	<script type="text/javascript">
+		var active_user = "p1";
+
+		function player_turn(){
+			document.getElementById('header').innerHTML = "Turn Of : " + active_user;
+		}
+
+		function result() {
+			var text_on_button1 = document.getElementById("one").innerHTML;
+			var text_on_button2 = document.getElementById("two").innerHTML;
+			var text_on_button3 = document.getElementById("three").innerHTML;
+			var text_on_button4 = document.getElementById("four").innerHTML;
+			var text_on_button5 = document.getElementById("five").innerHTML;
+			var text_on_button6 = document.getElementById("six").innerHTML;
+			var text_on_button7 = document.getElementById("seven").innerHTML;
+			var text_on_button8 = document.getElementById("eight").innerHTML;
+			var text_on_button9 = document.getElementById("nine").innerHTML;
+
+			//case of 1
+
+			if (text_on_button1 == "X" && text_on_button5 == "X" && text_on_button9 == "X") {
+				document.getElementById('header').innerHTML="Player 2 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+			else if (text_on_button1 == "X" && text_on_button2 == "X" && text_on_button3 == "X") {
+				document.getElementById('header').innerHTML="Player 2 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+			else if (text_on_button1 == "X" && text_on_button4 == "X" && text_on_button7 == "X") {
+				document.getElementById('header').innerHTML="Player 2 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+
+			// case of two
+
+			else if (text_on_button2 == "X" && text_on_button5 == "X" && text_on_button8 == "X") {
+				document.getElementById('header').innerHTML="Player 2 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+
+			//case of three
+
+			else if (text_on_button3 == "X" && text_on_button6 == "X" && text_on_button9 == "X") {
+				document.getElementById('header').innerHTML="Player 2 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+			else if (text_on_button3 == "X" && text_on_button5 == "X" && text_on_button7 == "X") {
+				document.getElementById('header').innerHTML="Player 2 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+
+			//case of four 
+
+			else if (text_on_button4 == "X" && text_on_button5 == "X" && text_on_button6 == "X") {
+				document.getElementById('header').innerHTML="Player 2 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+
+			//case of seven
+
+			else if (text_on_button7 == "X" && text_on_button8 == "X" && text_on_button9 == "X") {
+				document.getElementById('header').innerHTML="Player 2 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+
+			//player 1 finished
+
+			//player 2 case
+
+			else if (text_on_button1 == "O" && text_on_button5 == "O" && text_on_button9 == "O") {
+				document.getElementById('header').innerHTML="Player 1 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+			else if (text_on_button1 == "O" && text_on_button2 == "O" && text_on_button3 == "O") {
+				document.getElementById('header').innerHTML="Player 1 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+			else if (text_on_button1 == "O" && text_on_button4 == "O" && text_on_button7 == "O") {
+				document.getElementById('header').innerHTML="Player 1 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+
+			// case of two
+
+			else if (text_on_button2 == "O" && text_on_button5 == "O" && text_on_button8 == "O") {
+				document.getElementById('header').innerHTML="Player 1 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+
+			//case of three
+
+			else if (text_on_button3 == "O" && text_on_button6 == "O" && text_on_button9 == "O") {
+				document.getElementById('header').innerHTML="Player 1 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+			else if (text_on_button3 == "O" && text_on_button5 == "O" && text_on_button7 == "O") {
+				document.getElementById('header').innerHTML="Player 1 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+
+			//case of four 
+
+			else if (text_on_button4 == "O" && text_on_button5 == "O" && text_on_button6 == "O") {
+				document.getElementById('header').innerHTML="Player 1 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+
+			//case of seven
+
+			else if (text_on_button7 == "O" && text_on_button8 == "O" && text_on_button9 == "O") {
+				document.getElementById('header').innerHTML="Player 1 Won";
+				document.getElementById('board').style.display='none';
+				document.getElementById('play_again').style.display='block';
+			}
+
+			else {
+				document.getElementById('play_again').style.display='block';
+			}
+			
+		}
+
+		function name_button1(){
+			if(active_user == "p1"){
+				document.getElementById('one').innerHTML = "O";
+				document.getElementById('one').disabled = 'true';
+				active_user = "p2";
+			}else{
+				document.getElementById('one').innerHTML = "X";
+				document.getElementById('one').disabled = 'true';
+				active_user = "p1";
+			}
+		}
+		function name_button2(){
+			if(active_user == "p1"){
+				document.getElementById('two').innerHTML = "O";
+				document.getElementById('two').disabled = 'true';
+				active_user = "p2";
+			}else{				
+				document.getElementById('two').innerHTML = "X";
+				document.getElementById('two').disabled = 'true';
+				active_user = "p1";
+			}
+		}
+		function name_button3(){
+			if(active_user == "p1"){
+				document.getElementById('three').innerHTML = "O";
+				document.getElementById('three').disabled = 'true';
+				active_user = "p2";
+			}else{				
+				document.getElementById('three').innerHTML = "X";
+				document.getElementById('three').disabled = 'true';
+				active_user = "p1";
+			}
+		}
+		function name_button4(){
+			if(active_user == "p1"){
+				document.getElementById('four').innerHTML = "O";
+				document.getElementById('four').disabled = 'true';
+				active_user = "p2";
+			}else{
+				
+				document.getElementById('four').innerHTML = "X";
+				document.getElementById('four').disabled = 'true';
+				active_user = "p1";
+			}
+		}
+		function name_button5(){
+			if(active_user == "p1"){
+				document.getElementById('five').innerHTML = "O";
+				document.getElementById('five').disabled = 'true';
+				active_user = "p2";
+			}else{
+				
+				document.getElementById('five').innerHTML = "X";
+				document.getElementById('five').disabled = 'true';
+				active_user = "p1";
+			}
+		}
+		function name_button6(){
+			if(active_user == "p1"){
+				document.getElementById('six').innerHTML = "O";
+				document.getElementById('six').disabled = 'true';
+				active_user = "p2";
+			}else{
+				
+				document.getElementById('six').innerHTML = "X";
+				document.getElementById('six').disabled = 'true';
+				active_user = "p1";
+			}
+		}
+		function name_button7(){
+			if(active_user == "p1"){
+				document.getElementById('seven').innerHTML = "O";
+				document.getElementById('seven').disabled = 'true';
+				active_user = "p2";
+			}else{
+				
+				document.getElementById('seven').innerHTML = "X";
+				document.getElementById('seven').disabled = 'true';
+				active_user = "p1";
+			}
+		}
+		function name_button8(){
+			if(active_user == "p1"){
+				document.getElementById('eight').innerHTML = "O";
+				document.getElementById('eight').disabled = 'true';
+				active_user = "p2";
+			}else{
+				
+				document.getElementById('eight').innerHTML = "X";
+				document.getElementById('eight').disabled = 'true';
+				active_user = "p1";
+			}
+		}
+		function name_button9(){
+			if(active_user == "p1"){
+				document.getElementById('nine').innerHTML = "O";
+				document.getElementById('nine').disabled = 'true';
+				active_user = "p2";
+			}else{
+				
+				document.getElementById('nine').innerHTML = "X";
+				document.getElementById('nine').disabled = 'true';
+				active_user = "p1";
+			}
+		}
+
+	</script>
+</body>
+</html>
